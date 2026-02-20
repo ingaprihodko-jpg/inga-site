@@ -34,12 +34,12 @@
   "description": "Технический специалист по настройке GetCourse, созданию онлайн-школ и запуску инфопродуктов. Настройка вебинаров, сайтов на Тильде, автоматизация воронок.",
   "url": "https://techcpecialistinga.tilda.ws/",
   "telephone": "+79282313584",
-  "email": "support@genenko.ru",
+  "email": "inga.prihodko@mail.ru",
   "founder": {
     "@type": "Person",
     "name": "Инга Гененко",
     "jobTitle": "Технический специалист GetCourse и онлайн-школ",
-    "email": "support@genenko.ru",
+    "email": "inga.prihodko@mail.ru",
     "telephone": "+79282313584"
   },
   "hasOfferCatalog": {
@@ -822,6 +822,69 @@
     font-size: 16px;
   }
 
+
+  /* ── TELEGRAM CTA ── */
+  .tg-cta-block {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 48px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .tg-cta-icon { margin-bottom: 20px; }
+  .tg-cta-title {
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    color: var(--white);
+    margin-bottom: 14px;
+    letter-spacing: -0.01em;
+    line-height: 1.3;
+  }
+  .tg-cta-desc {
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.75;
+    margin-bottom: 32px;
+    max-width: 400px;
+  }
+  .tg-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #5dffd3;
+    color: #0a0a0f;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    padding: 16px 36px;
+    text-decoration: none;
+    clip-path: polygon(12px 0%, 100% 0%, calc(100% - 12px) 100%, 0% 100%);
+    transition: background 0.25s, transform 0.25s;
+    margin-bottom: 28px;
+  }
+  .tg-cta-btn:hover { background: #fff; transform: translateY(-2px); }
+  .tg-cta-alts { display: flex; flex-direction: column; gap: 10px; }
+  .tg-cta-alts span {
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .tg-cta-alt-links { display: flex; flex-wrap: wrap; gap: 16px; }
+  .tg-cta-alt-links a {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.2s;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 2px;
+  }
+  .tg-cta-alt-links a:hover { color: #5dffd3; border-color: #5dffd3; }
+
   /* ── FOOTER ── */
   footer {
     padding: 40px 5%;
@@ -848,11 +911,15 @@
 
   /* ── SCROLL REVEAL ── */
   .reveal {
-    opacity: 0;
-    transform: translateY(30px);
+    opacity: 1;
+    transform: none;
     transition: opacity 0.7s ease, transform 0.7s ease;
   }
-  .reveal.visible { opacity: 1; transform: none; }
+  .js-loaded .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  .js-loaded .reveal.visible { opacity: 1; transform: none; }
 
   /* ── RESPONSIVE ── */
   @media (max-width: 640px) {
@@ -881,7 +948,7 @@
 <!-- NAV -->
 <nav aria-label="Основная навигация" role="navigation">
   <a href="#" class="nav-logo" aria-label="Главная страница">Инга<span>.</span>Гененко</a>
-  <a href="#contact" class="nav-cta" aria-label="Оставить заявку">Обсудить проект</a>
+  <a href="https://t.me/Inga_Se" target="_blank" class="nav-cta" aria-label="Написать в Telegram">Написать в Telegram</a>
 </nav>
 
 <!-- HERO -->
@@ -899,7 +966,7 @@
   </p>
   
   <div class="hero-actions">
-    <a href="#contact" class="btn-primary">
+    <a href="https://t.me/Inga_Se" target="_blank" class="btn-primary">
       Оставить заявку
       <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </a>
@@ -947,23 +1014,6 @@
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
       </div>
       <svg class="service-icon" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="4" y="8" width="36" height="28" rx="2" stroke="currentColor" stroke-width="1.5"/>
-        <path d="M4 16h36" stroke="currentColor" stroke-width="1.5"/>
-        <circle cx="10" cy="12" r="1.5" fill="currentColor"/>
-        <circle cx="16" cy="12" r="1.5" fill="currentColor"/>
-        <path d="M14 24h16M14 30h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-      </svg>
-      <h3>Создание сайтов на Тильде</h3>
-      <p>Дизайн, верстка, домен, платёжная система, рассылки — сдаю готовый сайт под ключ</p>
-      <div class="service-price">от 3 000 ₽</div>
-    </div>
-
-    <div class="service-card">
-      <div class="service-num">02</div>
-      <div class="service-arrow">
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-      </div>
-      <svg class="service-icon" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect x="4" y="4" width="36" height="36" rx="3" stroke="currentColor" stroke-width="1.5"/>
         <path d="M14 22l6 6 10-12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
@@ -973,7 +1023,7 @@
     </div>
 
     <div class="service-card">
-      <div class="service-num">03</div>
+      <div class="service-num">02</div>
       <div class="service-arrow">
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
       </div>
@@ -987,7 +1037,7 @@
     </div>
 
     <div class="service-card">
-      <div class="service-num">04</div>
+      <div class="service-num">03</div>
       <div class="service-arrow">
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
       </div>
@@ -1002,7 +1052,7 @@
     </div>
 
     <div class="service-card">
-      <div class="service-num">05</div>
+      <div class="service-num">04</div>
       <div class="service-arrow">
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
       </div>
@@ -1018,7 +1068,7 @@
     </div>
 
     <div class="service-card">
-      <div class="service-num">06</div>
+      <div class="service-num">05</div>
       <div class="service-arrow">
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
       </div>
@@ -1030,6 +1080,22 @@
       <h3>Техническая упаковка школы</h3>
       <p>Сайт, платформа обучения, сервисы для рассылок, вебинары — полная техническая инфраструктура</p>
       <div class="service-price">от 20 000 ₽</div>
+    </div>
+
+    <div class="service-card" style="border: 1px solid rgba(93,255,211,0.25); position:relative;">
+      <div style="position:absolute;top:0;right:0;background:#5dffd3;color:#0a0a0f;font-family:'Unbounded',sans-serif;font-weight:700;font-size:10px;letter-spacing:0.08em;padding:6px 14px;text-transform:uppercase;">Бесплатно</div>
+      <div class="service-num">06</div>
+      <svg class="service-icon" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="4" y="10" width="36" height="24" rx="3" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M4 18h36" stroke="currentColor" stroke-width="1.5"/>
+        <rect x="10" y="24" width="8" height="4" rx="1" fill="currentColor" opacity="0.5"/>
+      </svg>
+      <h3>Базовая настройка GetCourse + платёжный модуль</h3>
+      <p>Базово настрою вашу школу на GetCourse и подключу платёжную систему — совершенно бесплатно. Напишите в Telegram, договоримся.</p>
+      <div class="service-price" style="display:flex;align-items:center;gap:10px;">
+        <span style="text-decoration:line-through;opacity:0.4;font-size:12px;">от 5 000 ₽</span>
+        <span style="color:#5dffd3;font-size:18px;">Бесплатно</span>
+      </div>
     </div>
 
   </div>
@@ -1163,7 +1229,7 @@
   <div class="about-layout">
     <div class="about-photo-wrap reveal">
       <div class="about-photo-placeholder">
-        <div class="about-photo-initials">ИГ</div>
+        <img src="https://raw.githubusercontent.com/ingaprihodko-jpg/inga-site/main/IMG_20171202_123613.jpg" alt="Инга Гененко — технический специалист GetCourse" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;">
       </div>
       <div class="about-badge">Технический<br>специалист</div>
     </div>
@@ -1204,11 +1270,11 @@
       <p>Расскажите задачу — разберёмся, что нужно сделать, и рассчитаем стоимость. Без лишних обязательств.</p>
       
       <div class="contact-links">
-        <a href="mailto:support@genenko.ru" class="contact-link">
+        <a href="/cdn-cgi/l/email-protection#cba2a5acaae5bbb9a2a3a4afa0a48ba6aaa2a7e5b9be" class="contact-link">
           <div class="contact-link-icon">
             <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="2" y="4" width="14" height="10" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M2 6l7 5 7-5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
           </div>
-          support@genenko.ru
+          <span class="__cf_email__" data-cfemail="167f7871773866647f7e79727d79567b777f7a386463">[email&#160;protected]</span>
         </a>
         <a href="tel:+79282313584" class="contact-link">
           <div class="contact-link-icon">
@@ -1216,41 +1282,35 @@
           </div>
           +7 928 231-35-84
         </a>
+        <a href="https://t.me/Inga_Se" target="_blank" class="contact-link">
+          <div class="contact-link-icon">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M2 9l13-6-5 14-2.5-4.5L2 9z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/><path d="M7.5 12.5l2-2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+          </div>
+          Telegram: @Inga_Se
+        </a>
       </div>
     </div>
     
     <div class="reveal">
-      <form class="contact-form" id="contactForm">
-        <div class="form-group">
-          <label>Ваше имя</label>
-          <input type="text" placeholder="Как вас зовут?" required>
+      <div class="tg-cta-block">
+        <div class="tg-cta-icon">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><path d="M6 24l34-16-13 36-6.5-11.5L6 24z" stroke="#5dffd3" stroke-width="2" stroke-linejoin="round"/><path d="M20.5 32.5l5-5" stroke="#5dffd3" stroke-width="2" stroke-linecap="round"/></svg>
         </div>
-        <div class="form-group">
-          <label>Контакт для связи</label>
-          <input type="text" placeholder="Телефон, email или Telegram" required>
+        <h3 class="tg-cta-title">Напишите мне в Telegram</h3>
+        <p class="tg-cta-desc">Расскажите о своём проекте — обсудим задачу, сроки и стоимость. Отвечаю быстро.</p>
+        <a href="https://t.me/Inga_Se" target="_blank" class="tg-cta-btn">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 10l16-7-6 17-3-6.5L3 10z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          Написать в Telegram
+        </a>
+        <div class="tg-cta-alts">
+          <span>или другим способом:</span>
+          <div class="tg-cta-alt-links">
+            <a href="mailto:inga.prihodko@mail.ru">inga.prihodko@mail.ru</a>
+            <a href="tel:+79282313584">+7 928 231-35-84</a>
+          </div>
         </div>
-        <div class="form-group">
-          <label>Услуга</label>
-          <select>
-            <option value="" disabled selected>Что нужно сделать?</option>
-            <option>Создание сайта на Тильде</option>
-            <option>Настройка GetCourse</option>
-            <option>Настройка вебинара</option>
-            <option>Администрирование онлайн-школы</option>
-            <option>Комплексная упаковка запуска</option>
-            <option>Техническая упаковка школы</option>
-            <option>Другое / не знаю</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Комментарий</label>
-          <textarea placeholder="Расскажите о своём проекте..."></textarea>
-        </div>
-        <button type="submit" class="form-submit">Отправить заявку →</button>
-      </form>
-      <div class="form-success" id="formSuccess">
-        ✦ Заявка отправлена!<br>Свяжусь с вами в ближайшее время
       </div>
+    </div>
     </div>
   </div>
 </section>
@@ -1307,8 +1367,9 @@
   <a href="http://ingagenenko.ru/privacy" style="font-size:12px;color:var(--muted);text-decoration:none;" rel="nofollow">Политика конфиденциальности</a>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   // Scroll reveal
+  document.body.classList.add('js-loaded');
   const revealEls = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((e, i) => {
@@ -1321,13 +1382,28 @@
   revealEls.forEach(el => observer.observe(el));
 
   // Form submit
-  document.getElementById('contactForm').addEventListener('submit', function(e) {
+  document.getElementById('contactForm').addEventListener('submit', async function(e) {
     e.preventDefault();
-    this.style.display = 'none';
-    document.getElementById('formSuccess').style.display = 'block';
+    const form = this;
+    const data = new FormData(form);
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        form.style.display = 'none';
+        document.getElementById('formSuccess').style.display = 'block';
+      } else {
+        alert('Ошибка отправки. Напишите на inga.prihodko@mail.ru');
+      }
+    } catch(err) {
+      alert('Ошибка. Напишите на inga.prihodko@mail.ru');
+    }
   });
 
-  // Nav hide on scroll down, show on scroll up
+  // Nav hide on scroll
   let lastY = 0;
   const nav = document.querySelector('nav');
   window.addEventListener('scroll', () => {

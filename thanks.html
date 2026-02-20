@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Спасибо! Переходим в Telegram...</title>
+<meta name="robots" content="noindex, nofollow">
+
+<!-- СКРИПТЫ КОНВЕРСИИ — срабатывают при загрузке страницы -->
+<script src="https://inga16.chatium.ru/s/metric/clarity.js"></script>
+<script src="https://inga16.chatium.ru/agent-avito/script-target"></script>
+<script src="https://inga16.chatium.ru/agent-avito/script-success"></script>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@700;900&family=Manrope:wght@400;600;700&display=swap');
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #0a0a0f;
+    color: #f0f0f5;
+    font-family: 'Manrope', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .glow {
+    position: fixed;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(93,255,211,0.1) 0%, transparent 70%);
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+
+  .wrap {
+    text-align: center;
+    padding: 40px 24px;
+    position: relative;
+    z-index: 1;
+    animation: fadeUp 0.6s ease both;
+  }
+
+  .icon {
+    width: 80px; height: 80px;
+    background: rgba(93,255,211,0.1);
+    border: 1px solid rgba(93,255,211,0.25);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 28px;
+    animation: popIn 0.5s 0.2s ease both;
+  }
+
+  h1 {
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 900;
+    font-size: clamp(28px, 5vw, 48px);
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin-bottom: 16px;
+  }
+
+  h1 span { color: #5dffd3; }
+
+  p {
+    color: #b0b0c8;
+    font-size: 17px;
+    line-height: 1.7;
+    margin-bottom: 36px;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .tg-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #5dffd3;
+    color: #0a0a0f;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    padding: 16px 40px;
+    text-decoration: none;
+    clip-path: polygon(12px 0%, 100% 0%, calc(100% - 12px) 100%, 0% 100%);
+    transition: background 0.25s, transform 0.25s;
+    margin-bottom: 20px;
+  }
+  .tg-btn:hover { background: #fff; transform: translateY(-2px); }
+
+  .counter {
+    font-size: 13px;
+    color: #7a7a9a;
+  }
+  .counter span {
+    color: #5dffd3;
+    font-weight: 700;
+  }
+
+  .back {
+    display: block;
+    margin-top: 24px;
+    font-size: 13px;
+    color: #7a7a9a;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .back:hover { color: #5dffd3; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes popIn {
+    from { opacity: 0; transform: scale(0.5); }
+    to   { opacity: 1; transform: scale(1); }
+  }
+</style>
+</head>
+<body>
+
+<div class="glow"></div>
+
+<div class="wrap">
+  <div class="icon">
+    <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+      <path d="M5 18l26-12-10 28-5-9.5L5 18z" stroke="#5dffd3" stroke-width="1.8" stroke-linejoin="round"/>
+      <path d="M16 24.5l4-4" stroke="#5dffd3" stroke-width="1.8" stroke-linecap="round"/>
+    </svg>
+  </div>
+
+  <h1>Отлично!<br>Переходим в <span>Telegram</span></h1>
+  <p>Напишите мне — обсудим вашу задачу, сроки и стоимость. Отвечаю быстро.</p>
+
+  <a href="https://t.me/Inga_Se" class="tg-btn" id="tgBtn">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+      <path d="M3 10l14-6-5 14-3-5.5L3 10z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+    </svg>
+    Написать @Inga_Se
+  </a>
+
+  <div class="counter">Автоматический переход через <span id="sec">3</span> сек...</div>
+  <a href="index.html" class="back">← Вернуться на сайт</a>
+</div>
+
+<script>
+  // Автоматический редирект в Telegram через 3 секунды
+  let sec = 3;
+  const secEl = document.getElementById('sec');
+  const timer = setInterval(() => {
+    sec--;
+    secEl.textContent = sec;
+    if (sec <= 0) {
+      clearInterval(timer);
+      window.location.href = 'https://t.me/Inga_Se';
+    }
+  }, 1000);
+</script>
+
+</body>
+</html>
